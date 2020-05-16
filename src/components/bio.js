@@ -34,7 +34,7 @@ function Bio() {
               }}
             />
             <p>
-              Escrito por <strong>{author}</strong>, estudiante de Ingeniería Informática y curioso por naturaleza..
+              Soy <strong>{author}</strong>, estudiante de Ingeniería Informática y curioso por naturaleza..
               {` `}
               <a href={`https://twitter.com/${social.twitter}`}>
                 ¿Me sigues en Twitter?
