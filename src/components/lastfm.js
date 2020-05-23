@@ -20,7 +20,7 @@ export default class LastFm extends React.Component {
     }
 
     async componentDidMount() {
-        const res = await fetch("http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=suzamax&api_key=9d17e8b3542e80484a9ec31253f75f7e&limit=1&format=json");
+        const res = await fetch("https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=suzamax&api_key=9d17e8b3542e80484a9ec31253f75f7e&limit=1&format=json");
         const json = await res.json()
         const track = await json.recenttracks.track[0];
 
