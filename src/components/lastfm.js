@@ -83,10 +83,10 @@ const LastFM = styled.div`
     position: fixed;
     top: 0;
     margin: .5em;
-    left: 0;
+    right: 0;
     height: 64px;
     width: calc(100% - 1em);
-    max-width: 20em;
+    max-width: 25em;
     border-bottom: 1px solid rgba(0,0,0,.25);
     border-radius: 2px;
     box-shadow: 0 .1rem .5rem rgba(0,0,0,.66);
@@ -100,6 +100,7 @@ const LastFMCover = styled.img`
 `;
 
 const LastFMText = styled.div`
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     padding: 1em;
     position: relative;
     margin-left: 70px;
