@@ -27,19 +27,19 @@ Me basaré en [este artículo de MSDN](https://docs.microsoft.com/en-us/windows/
 
 **Importante**: necesitáis tener herramientas para ello. En Visual Studio Installer procurad instalar la herramienta **Desarrollo de Linux con C++**.
 
-![Ventana de Visual Studio Installer para seleccionar nuestra opción (abajo del todo)](assets/opcion_linux.png "Ventana de Visual Studio Installer para seleccionar nuestra opción (abajo del todo)")
+![Ventana de Visual Studio Installer para seleccionar nuestra opción (abajo del todo)](/assets/opcion_linux.png "Ventana de Visual Studio Installer para seleccionar nuestra opción (abajo del todo)")
 
 Primero, cread un proyecto y buscad Linux C++.
 
-![Proyecto vacío de Linux](assets/void_linux.png "Proyecto vacío de Linux")
+![Proyecto vacío de Linux](/assets/void_linux.png "Proyecto vacío de Linux")
 
 Cuando lo tengáis creado, al crear vuestros ficheros *.cpp* y programarlos, habrá que compilarlos. Tendréis que configurar el proyecto para que utilice WSL. Abajo a la derecha tenéis la microventana de Propiedades:
 
-![Aquí están las propiedades del proyecto](assets/propiedades.png "Aquí están las propiedades del proyecto")
+![Aquí están las propiedades del proyecto](/assets/propiedades.png "Aquí están las propiedades del proyecto")
 
 Abrid las páginas de propiedades. Entonces aparecerá esta ventana:
 
-![Ventana ya editada. Configurad tanto Debug como Release.](assets/configure.png "Ventana ya editada. Configurad tanto Debug como Release.")
+![Ventana ya editada. Configurad tanto Debug como Release.](/assets/configure.png "Ventana ya editada. Configurad tanto Debug como Release.")
 
 Configurada tal y como aparece, porque por defecto apuntará a un servidor remoto. Configuradlo para GCC for Windows Subsystem for Linux, y la ruta al sistema buscadla en vuestro directorio `%APPDATA%\..\Local\Microsoft\WindowsApps`, en mi caso es `ubuntu2004.exe`.
 
