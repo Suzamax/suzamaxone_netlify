@@ -69,7 +69,7 @@ module.exports = {
 };
 ```
 
-## Configurando Next.js para usar SASS
+## Configurando Next.js para usar SASS y Tailwind
 
 Como hemos instalado anteriormente next-sass, entonces se puede poner una regla en Webkit que la utilice. La confiuguración es casi estándar, solo se llama a un plugin y aportamos como argumento un JSON con Webpack a next-sass.
 
@@ -102,8 +102,29 @@ module.exports = withSass({
     }
     };
 }});
+```
 
+También añadirimos un fichero `src/pages/_app.js` (personalmente utilizo el directorio src para tener todo allí) con este contenido:
 
+```js
+import React from "react"
+import "../styles/style.scss"
+
+function MyApp({ Component, pageProps }) {
+    return <Component {...pageProps} />
+}
+
+export default MyApp
+```
+
+Y añadimos el fichero SASS en `src/styles/style.scss`:
+
+```css
+/* Importo también la tipografía */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap');
+@import "tailwindcss/base";
+@import "tailwindcss/components"; 
+@import "tailwindcss/utilities";
 ```
 
 Y con esto ya tendríamos lista la configuración.
