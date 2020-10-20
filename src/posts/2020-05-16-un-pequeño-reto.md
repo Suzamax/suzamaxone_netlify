@@ -1,6 +1,6 @@
 ---
 path: quick-challenge
-date: 2020-05-16T09:56:56.932Z
+date: '2020-05-16T09:56:56.932Z'
 title: Un pequeño reto
 description: ¿Serás capaz de resolverlo?
 ---

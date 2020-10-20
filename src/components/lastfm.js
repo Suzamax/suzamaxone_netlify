@@ -1,9 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import ColorThief from "colorthief"
-import { StaticQuery, graphql } from "gatsby"
+import ColorThief from 'colorthief/dist/color-thief.mjs'
 
-const colorThief = new ColorThief();
 const googleProxyURL = 'https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&refresh=2592000&url=';
 
 export default class LastFm extends React.Component {
@@ -27,22 +25,22 @@ export default class LastFm extends React.Component {
         this.setState({
             artist: track.artist['#text'],
             title: track.name,
-            cover: track.image[1]["#text"],
+            cover: track.image[1]["#text"]
         });
 
+        this.getColorFromCover(track.image[1]["#text"])
     }
 
-    getColor = async img => {
-        img.crossOrigin = 'Anonymous';
-        img.src = googleProxyURL + encodeURIComponent(this.state.cover);
-        if (img.complete) {
-            return colorThief.getColor(img);
-        } else {
-            img.addEventListener('load', async function() {
-                console.log(img);
-                return colorThief.getColor(img);
-            }, false);       
+    getColorFromCover(url) {
+        const img = new Image();
+        img.onload = () => { 
+            this.setState({
+                bgcolor: new ColorThief().getColor(img)
+            });
         }
+        img.crossOrigin = 'Anonymous';
+        img.src = googleProxyURL + encodeURIComponent(url);
+        img.style
     }
     
     componentWillUnmount() {
@@ -52,78 +50,32 @@ export default class LastFm extends React.Component {
 
     render() {
         return (
-            <div>
-            <StaticQuery
-                query={defaultCover}
-                render={data => 
-                    <LastFM id="lastfm" bgcolor={this.state.bgcolor}>
-                        <LastFMCover alt="cover" src={this.state.cover ?? data.default.childImageSharp.fixed} />
-                        <LastFMText>Estoy escuchando
-                            <LastFMTitle> {this.state.title}</LastFMTitle> de 
-                            <LastFMArtist> {this.state.artist}</LastFMArtist>
-                            <div className="bars"></div>
-                        </LastFMText>
-                    </LastFM>
-                }
-            />
-            <PTop />
+            <div className="justify-items-center">
+                <LastFmComponent id="lastfm" style={{backgroundColor: 'rgba('+this.state.bgcolor[0]+','+this.state.bgcolor[1]+','+this.state.bgcolor[2]+',1)'}}>
+                    <img style={{
+                        margin: '1rem',
+                        boxShadow: '0 0 1px black',
+                        borderRadius: 2
+                    }} alt="cover" src={this.state.cover} />
+                    <TextComponent style={{color: 'rgba('+(255-this.state.bgcolor[0])+','+(255-this.state.bgcolor[1])+','+(255-this.state.bgcolor[2])+',1)'}}>#NowPlaying
+                        <span> {this.state.artist}</span> - <span> {this.state.title}</span> 
+                    </TextComponent>
+                </LastFmComponent>
             </div>
         )
     } 
 }
 
-const PTop = styled.div`
-    content: "";
-    position: relative;
-    height: 50px;
-`;
-
-const LastFM = styled.div`
-    background-color: rgba(248,248,255,.8);
-    position: fixed;
-    top: 0;
-    margin: .5em;
-    right: 0;
-    height: 64px;
-    width: calc(100% - 1em);
-    max-width: 25em;
-    border-bottom: 1px solid rgba(0,0,0,.25);
+const LastFmComponent = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 72px;
     border-radius: 2px;
-    box-shadow: 0 .1rem .5rem rgba(0,0,0,.66);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    z-index: 9;
+    max-width: fit-content;
+    margin: 0 auto 2rem;
 `;
 
-const LastFMCover = styled.img`
-    float: left;
+const TextComponent = styled.div`
+    padding-right: 1rem;
 `;
-
-const LastFMText = styled.div`
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    padding: 1em;
-    position: relative;
-    margin-left: 70px;
-    font-size: .66rem;
-`;
-
-const LastFMTitle = styled.p`
-    display: inline;
-    font-weight: bolder;
-`;
-const LastFMArtist = styled.p`
-    display: inline;
-    font-weight: bolder;
-`;
-
-const defaultCover = graphql`
-  query DefaultCover {
-    default: file(absolutePath: { regex: "/undefined.jpg/" }) {
-      childImageSharp {
-        fixed(width: 64, height: 64) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-  }
-`

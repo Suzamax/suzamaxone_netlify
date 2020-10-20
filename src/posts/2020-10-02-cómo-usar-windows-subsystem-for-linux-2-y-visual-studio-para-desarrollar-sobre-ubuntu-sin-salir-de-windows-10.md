@@ -1,6 +1,6 @@
 ---
 path: wsl-visual-studio
-date: 2020-10-02T13:36:39.360Z
+date: '2020-10-02T13:36:39.360Z'
 title: Cómo usar Windows Subsystem for Linux 2 y Visual Studio para desarrollar
   sobre Ubuntu sin salir de Windows 10
 description: Un pequeño tutorial para desarrollar de forma cómoda en Linux sin

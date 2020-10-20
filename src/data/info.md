@@ -1,19 +1,12 @@
-import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
-import Layout from "../components/layout"
-
-
-<Layout location="/about" title="Currículum">
-<SEO
-    title="Sobre mí"
-    description="Currículum Vitae de Carlos Cañellas"
-/>
-
-# Carlos Cañellas
+---
+title: info page
+background_color: '#dddddd'
+---
+# Quién soy
 
 Administrador de sistemas informáticos y de redes, DevOps, desarrollador web frontend y backend
 
-Desarrollo principalmente en JavaScript/TypeScript y PHP, usando React, Vue, ExpressJS, Koa, Laravel, Symfony y similares. He desarrollado algunos proyectos con ello, échale un vistazo abajo.
+Desarrollo principalmente en JavaScript/TypeScript y PHP, usando React, Vue, ExpressJS, Laravel, Symfony y similares. He desarrollado algunos proyectos con ello, échale un vistazo abajo.
 
 ## Sobre mí
 
@@ -40,8 +33,8 @@ Lo que más he tocado han sido sistemas operativos y programación web, tanto en
 
 * React
 * Vue
-* Gatsby (Basado en React) - ¡Usado en esta web!
-* Otros (Svelte, Angular...)
+* Next.js (Basado en React) - ¡Usado en esta web!
+* Interesado en aprender Angular
 
 ##### Frameworks CSS
 
@@ -76,6 +69,3 @@ San Ginés, Murcia (Marzo de 2017 - Junio de 2017)
 Universidad de Murcia (Noviembre de 2018 - Julio de 2019)
 * Desarrollo de páginas web en Laravel 5, especialmente un proyecto para la CARM.
 * Administración de equipos informáticos.
-
-
-</Layout>
