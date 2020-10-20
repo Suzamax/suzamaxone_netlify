@@ -53,7 +53,7 @@ export default class LastFm extends React.Component {
             <div className="justify-items-center">
                 <LastFmComponent id="lastfm" style={{backgroundColor: 'rgba('+this.state.bgcolor[0]+','+this.state.bgcolor[1]+','+this.state.bgcolor[2]+',1)'}}>
                     <img style={{
-                        marginRight: '1rem',
+                        margin: '0 1rem 0 0',
                         boxShadow: '0 0 1px black',
                         borderRadius: 2
                     }} alt="cover" src={this.state.cover} />
