@@ -1,6 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
+import styled from 'styled-components'
+import tw from 'twin.macro'
 
 const BlogList = ({ allBlogs }) => {
   function truncateSummary(content) {
@@ -14,9 +16,9 @@ const BlogList = ({ allBlogs }) => {
 
   return (
     <>
-      <div className="list">
+      <Reverse className="list">
         {allBlogs.length > 1 &&
-          allBlogs.map(post => (
+          allBlogs.map(post => {if (post.slug !== "undefined") return (
             <Link key={post.slug} href={{ pathname: `/blog/${post.slug}` }}>
                 <div>
                   <div className="hero_image">
@@ -36,10 +38,14 @@ const BlogList = ({ allBlogs }) => {
                   </div>
                 </div>
             </Link>
-          ))}
-      </div>
+          )})}
+      </Reverse>
     </>
   )
 }
 
 export default BlogList
+
+const Reverse = styled.div`
+  ${tw`flex flex-col-reverse`}
+`
