@@ -1,5 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
+import tw from 'twin.macro'
 
 export default function Meta(props) {
     return (
@@ -23,10 +24,17 @@ export default function Meta(props) {
                         margin: 0;
                         font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
                         overflow-x: hidden;
-                        color: #000;
                         font-size: 16px;
                         -webkit-font-smoothing: antialiased;
                         -moz-osx-font-smoothing: grayscale;
+                    }
+                    body.dark-mode {
+                        background-color: #1a202c;
+                        color: #f7fafc;
+                    }
+                    body.light-mode {
+                        color: #2d3748;
+                        background-color: #f7fafc;
                     }
                     a {
                         text-decoration: none;
@@ -127,14 +135,12 @@ export default function Meta(props) {
                     font-size: 1.2rem;
                     letter-spacing: -0.5px;
                     line-height: 1.1875;
-                    color: #a0a0a0;
                     font-weight: normal;
                     }
                     p {
                     font-size: 1.2rem;
                     letter-spacing: -0.5px;
                     line-height: 1.5;
-                    color: #464646;
                     }
                     @media (min-width: 1280px) {
                         h1 {
@@ -151,7 +157,6 @@ export default function Meta(props) {
                             font-size: 1rem;
                             letter-spacing: -0.5px;
                             line-height: 1.1875;
-                            color: #a0a0a0;
                             font-weight: normal;
                         }
                         p {

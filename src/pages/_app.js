@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import * as gtag from '../lib/gtag'
+import Providers from '../components/Providers'
 import "../styles/style.css"
 
-
-const App = ({ Component, pageProps }) => {
+const MyApp = ({ Component, pageProps }) => {
   const router = useRouter()
   useEffect(() => {
     const handleRouteChange = (url) => {
@@ -16,7 +16,11 @@ const App = ({ Component, pageProps }) => {
     }
   }, [router.events])
 
-  return <Component {...pageProps} />
+  return (
+    <Providers>
+      <Component {...pageProps} />
+    </Providers>
+  )
 }
 
-export default App
+export default MyApp

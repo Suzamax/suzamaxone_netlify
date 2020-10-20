@@ -1,6 +1,5 @@
 ---
 title: info page
-background_color: '#dddddd'
 ---
 # Quién soy
 
