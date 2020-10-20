@@ -73,7 +73,7 @@ const LastFmComponent = styled.div`
     height: 72px;
     border-radius: 2px;
     max-width: fit-content;
-    margin: 0 auto 2rem;
+    margin: 1rem auto;
 `;
 
 const TextComponent = styled.div`
