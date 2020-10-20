@@ -3,6 +3,7 @@ path: quick-challenge
 date: '2020-05-16T09:56:56.932Z'
 title: Un pequeño reto
 description: ¿Serás capaz de resolverlo?
+hero_image: '/assets/thinking.png'
 ---
 Recientemente me topé con [este tweet](https://twitter.com/iordic/status/1250493045944070150) y no pude resistirme a averiguar qué era.
 

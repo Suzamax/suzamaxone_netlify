@@ -5,6 +5,7 @@ title: Cómo usar Windows Subsystem for Linux 2 y Visual Studio para desarrollar
   sobre Ubuntu sin salir de Windows 10
 description: Un pequeño tutorial para desarrollar de forma cómoda en Linux sin
   salir de Windows
+hero_image: '/assets/tux-vs.png'
 ---
 Muchos me habéis pedido que realizara un artículo para poder desarrollar vuestros programas nativos en Linux (Ubuntu, por ejemplo) sin necesidad de reiniciar y, a ser posible, utilizar el entorno que nos provee Microsoft (Visual Studio 2019 actualmente).
 

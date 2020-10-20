@@ -20,24 +20,25 @@ const BlogList = ({ allBlogs }) => {
         {allBlogs.length > 1 &&
           allBlogs.map(post => {if (post.slug !== "undefined") return (
             <Link key={post.slug} href={{ pathname: `/blog/${post.slug}` }}>
-                <div>
-                  <div className="hero_image">
-                    <img
-                      src={post.frontmatter.hero_image}
-                      alt={post.frontmatter.hero_image}
-                    />
-                  </div>
-                  <div className="blog__info">
-                    <h2>{post.frontmatter.title}</h2>
-                    <h3> {reformatDate(post.frontmatter.date)}</h3>
-                    <p>
-                      <ReactMarkdown
-                        source={truncateSummary(post.markdownBody)}
+                <Flex>
+                    <Column1_6 className="hero_image">
+                      <Img
+                        src={post.frontmatter.hero_image}
+                        alt={post.frontmatter.hero_image}
                       />
-                    </p>
-                  </div>
-                </div>
+                    </Column1_6>
+                    <Column5_6 className="blog__info">
+                      <h2>{post.frontmatter.title}</h2>
+                      <h3> {reformatDate(post.frontmatter.date)}</h3>
+                      <p>
+                        <ReactMarkdown
+                          source={post.frontmatter.description}
+                        />
+                      </p>
+                    </Column5_6>
+                </Flex>
             </Link>
+            
           )})}
       </Reverse>
     </>
@@ -48,4 +49,19 @@ export default BlogList
 
 const Reverse = styled.div`
   ${tw`flex flex-col-reverse`}
+`
+
+const Column5_6 = styled.div`
+  ${tw`w-5/6`}
+`
+const Column1_6 = styled.div`
+  ${tw`w-1/6`}
+`
+
+const Img = styled.img`
+  ${tw`p-2`}
+`
+
+const Flex = styled.div`
+  ${tw`flex`}
 `
