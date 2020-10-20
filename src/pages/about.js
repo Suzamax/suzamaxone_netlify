@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '../components/Layout'
+import Layout from '../components/MainLayout'
 import matter from 'gray-matter'
 import ReactMarkdown from 'react-markdown'
 import { Container, Tailwind } from '../components/styles'

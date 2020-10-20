@@ -1,6 +1,6 @@
 import React from 'react'
 import matter from 'gray-matter'
-import Layout from '../components/Layout'
+import Layout from '../components/MainLayout'
 import BlogList from '../components/BlogList'
 import { Tailwind, Container } from '../components/styles'
 

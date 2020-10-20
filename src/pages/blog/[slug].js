@@ -1,7 +1,7 @@
 import React from 'react'
 import matter from 'gray-matter'
 import ReactMarkdown from 'react-markdown'
-import Layout from '../../components/Layout'
+import Layout from '../../components/MainLayout'
 import { Tailwind, Container } from '../../components/styles'
 
 export default function PostTemplate({ content, data }) {
