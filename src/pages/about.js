@@ -1,3 +1,4 @@
+import 'regenerator-runtime/runtime'
 import React from 'react'
 import Layout from '../components/MainLayout'
 import matter from 'gray-matter'

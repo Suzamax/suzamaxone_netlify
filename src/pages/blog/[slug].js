@@ -1,9 +1,10 @@
-import React, { lazy, Suspense } from 'react';
+import 'regenerator-runtime/runtime'
+import React from 'react';
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import ReactMarkdown from 'react-markdown'
-const Layout = lazy(() => import('../../components/MainLayout'))
+import Layout from '../../components/MainLayout'
 import { Tailwind, Container } from '../../components/styles'
 
 export default function PostTemplate(props) {
@@ -15,7 +16,6 @@ export default function PostTemplate(props) {
 
   return (
     <Tailwind>
-      <Suspense fallback={renderLoader()}>
       <Layout
         siteTitle={props.title}
         siteDescription={props.description}
@@ -26,7 +26,6 @@ export default function PostTemplate(props) {
           <ReactMarkdown source={props.markdownBody} />
         </Container>
       </Layout>
-      </Suspense>
     </Tailwind>
   )
 }
