@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import ColorThief from 'colorthief/dist/color-thief.mjs'
 import LazyLoad from 'react-lazy-load';
+import tw from "twin.macro";
 
 const googleProxyURL = 'https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&refresh=2592000&url=';
 
@@ -22,10 +23,13 @@ export default class LastFm extends React.Component {
         const res = await fetch("https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=suzamax&api_key=9d17e8b3542e80484a9ec31253f75f7e&limit=1&format=json");
         const json = await res.json()
         const track = await json.recenttracks.track[0];
+        const np = () => track["@attr"] !== undefined;
+        const isplaying = np();
 
         this.setState({
             artist: track.artist['#text'],
             title: track.name,
+            isPlaying: isplaying,
             cover: track.image[1]["#text"]
         });
 
@@ -52,21 +56,19 @@ export default class LastFm extends React.Component {
     render() {
         return (
             <div className="justify-items-center">
-                <LastFmComponent id="lastfm" style={{backgroundColor: 'rgba('+this.state.bgcolor[0]+','+this.state.bgcolor[1]+','+this.state.bgcolor[2]+',1)'}}>
-                    <LazyLoad 
-                        width={64}
-                        height={64}
+                <LastFmComponent id="lastfm" style={{opacity: this.state.isPlaying ? "1" : "0.33", backgroundColor: 'rgba('+this.state.bgcolor[0]+','+this.state.bgcolor[1]+','+this.state.bgcolor[2]+',1)'}}>
+                    <LazyLoad
                         debounce={false}
                         offsetVertical={450}
                     >
                         <img style={{
-                            margin: '0 1rem',
+                            margin: '0 .5rem',
                             boxShadow: '0 0 1px black',
                             borderRadius: 2
                         }} alt="cover" src={this.state.cover} />
                     </LazyLoad>
-                    <TextComponent style={{color: 'rgba('+(255-this.state.bgcolor[0])+','+(255-this.state.bgcolor[1])+','+(255-this.state.bgcolor[2])+',1)'}}>#NowPlaying
-                        <span> {this.state.artist}</span> - <span> {this.state.title}</span> 
+                    <TextComponent style={{color: 'rgba('+(255-this.state.bgcolor[0])+','+(255-this.state.bgcolor[1])+','+(255-this.state.bgcolor[2])+',1)'}}>
+                        <Bolder> {this.state.artist}</Bolder> - <span> {this.state.title}</span> 
                     </TextComponent>
                 </LastFmComponent>
             </div>
@@ -78,12 +80,17 @@ const LastFmComponent = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 72px;
+    height: 2rem;
+    ${tw`shadow text-sm`}
     border-radius: 2px;
     max-width: fit-content;
-    margin: 1rem auto;
+    margin: 3rem auto;
 `;
 
 const TextComponent = styled.div`
     padding-right: 1rem;
 `;
+
+const Bolder = styled.span`
+    font-weight: 700;
+`

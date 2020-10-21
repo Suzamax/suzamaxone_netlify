@@ -25,8 +25,6 @@ const BlogList = ({ allBlogs }) => {
                 <Flex>
                     <Column1_6 className="hero_image">
                       <LazyLoad 
-                          width={250}
-                          height={250}
                           debounce={false}
                           offsetVertical={300}
                       >

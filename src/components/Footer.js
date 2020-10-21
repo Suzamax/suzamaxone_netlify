@@ -5,8 +5,6 @@ import tw from 'twin.macro';
 import LastFm from './lastfm';
 
 export default function Footer() {
-
-
     return(
         <FooterComponent>
             <Social>
@@ -66,12 +64,13 @@ export default function Footer() {
 }
 
 const FooterComponent = styled.footer`
-${tw`bg-gray-800 w-2/3 grid md:grid-cols-2 m-3 mx-auto text-gray-100 p-1 p-2 rounded-md shadow-md`}
+    ${tw`bg-gray-800 w-2/3 grid md:grid-cols-2 m-3 mx-auto text-white p-1 p-2 rounded-md shadow-md`}
 `;
 
 
 const Social = styled.div`
     ${tw`fill-current mx-auto`}
+    margin-top: 1rem;
 `
 
 const SpacedSVG = styled.svg`

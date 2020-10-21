@@ -29,7 +29,7 @@ export default function Header(props) {
 }
 
 const HeaderStyled = styled.header`
-  ${tw`bg-gray-800 w-2/3 m-3 mx-auto text-gray-100 text-center p-5 rounded-md shadow-md`}
+  ${tw`bg-gray-800 w-2/3 m-3 mx-auto text-white text-center p-5 rounded-md shadow-md`}
 `
 
 const LinkButton = styled.a`

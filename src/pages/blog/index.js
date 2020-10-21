@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import matter from 'gray-matter'
 import Layout from '../../components/MainLayout'
 import BlogList from '../../components/BlogList'

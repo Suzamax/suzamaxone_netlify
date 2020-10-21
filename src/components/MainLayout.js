@@ -1,10 +1,7 @@
 import React from 'react'
-import Link from "next/link";
-
-import Header from "./Header";
+import Header from "./Header"
 import Meta from './Meta'
-import Footer from './Footer';
-
+import Footer from './Footer'
 
 export default function Layout(props) {
   return (
@@ -18,13 +15,13 @@ export default function Layout(props) {
         color: `${props.pathname == "info" && 'white'}`
       }}
     >
-    <Meta
-      siteTitle={props.siteTitle}
-      siteDescription={props.siteDescription}
-    />
-    <Header siteTitle={props.siteTitle} />
-    <div className="content">{props.children}</div>
-    <Footer />
-  </section>
+      <Meta
+        siteTitle={props.siteTitle}
+        siteDescription={props.siteDescription}
+      />
+      <Header siteTitle={props.siteTitle} />
+      <div className="content">{props.children}</div>
+      <Footer />
+    </section>
   );
 }
