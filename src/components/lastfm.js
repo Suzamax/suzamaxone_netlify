@@ -67,7 +67,7 @@ export default class LastFm extends React.Component {
                             borderRadius: 2
                         }} alt="cover" src={this.state.cover} />
                     </LazyLoad>
-                    <TextComponent style={{color: 'rgba('+(255-this.state.bgcolor[0])+','+(255-this.state.bgcolor[1])+','+(255-this.state.bgcolor[2])+',1)'}}>
+                    <TextComponent style={{color: 'rgba('+(this.state.bgcolor[0] > 128 ? 0 : 255)+','+(this.state.bgcolor[1] > 128 ? 0 : 255)+','+(this.state.bgcolor[2] > 128 ? 0 : 255)+',1)'}}>
                         <Bolder> {this.state.artist}</Bolder> - <span> {this.state.title}</span> 
                     </TextComponent>
                 </LastFmComponent>
@@ -81,7 +81,7 @@ const LastFmComponent = styled.div`
     align-items: center;
     justify-content: center;
     height: 2rem;
-    ${tw`shadow text-sm`}
+    ${tw`shadow text-xs`}
     border-radius: 2px;
     max-width: fit-content;
     margin: 3rem auto;

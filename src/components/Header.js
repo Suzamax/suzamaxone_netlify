@@ -33,5 +33,5 @@ const HeaderStyled = styled.header`
 `
 
 const LinkButton = styled.a`
-  ${tw`bg-blue-500 hover:bg-blue-700 cursor-pointer text-white font-bold py-2 px-4 border-0 rounded`}
+  ${tw`bg-blue-700 hover:bg-blue-900 cursor-pointer text-white font-bold py-2 px-4 border-0 rounded`}
 `
