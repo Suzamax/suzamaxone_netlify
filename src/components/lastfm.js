@@ -56,7 +56,11 @@ export default class LastFm extends React.Component {
     render() {
         return (
             <div className="justify-items-center">
-                <LastFmComponent id="lastfm" style={{opacity: this.state.isPlaying ? "1" : "0.33", backgroundColor: 'rgba('+this.state.bgcolor[0][0]+','+this.state.bgcolor[0][1]+','+this.state.bgcolor[0][2]+',1)'}}>
+                <LastFmComponent id="lastfm" style={{
+                    opacity: this.state.isPlaying ? "1" : "0.33", 
+                    backgroundColor: 'rgba('+this.state.bgcolor[0][0]+','+this.state.bgcolor[0][1]+','+this.state.bgcolor[0][2]+',1)',
+                    border: '1px solid rgba('+this.state.bgcolor[2][0]+','+this.state.bgcolor[2][1]+','+this.state.bgcolor[2][2]+',1)'
+                }}>
                     <LazyLoad
                         debounce={false}
                         offsetVertical={450}
@@ -67,7 +71,7 @@ export default class LastFm extends React.Component {
                             borderRadius: 2
                         }} alt="cover" src={this.state.cover} />
                     </LazyLoad>
-                    <TextComponent style={{color: 'rgba('+(this.state.bgcolor[2][0])+','+(this.state.bgcolor[2][1])+','+(this.state.bgcolor[2][2])+',1)'}}>
+                    <TextComponent style={{color: 'rgba('+(this.state.bgcolor[1][0])+','+(this.state.bgcolor[1][1])+','+(this.state.bgcolor[1][2])+',1)'}}>
                         <Bolder> {this.state.artist}</Bolder> - <span> {this.state.title}</span> 
                     </TextComponent>
                 </LastFmComponent>
