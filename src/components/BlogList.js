@@ -64,5 +64,5 @@ const Img = styled.img`
 `
 
 const Flex = styled.div`
-  ${tw`flex shadow-md m-2 bg-gray-400 bg-opacity-25 p-5`}
+  ${tw`flex shadow-md m-2 bg-gray-400 bg-opacity-25 p-5 rounded-md`}
 `
