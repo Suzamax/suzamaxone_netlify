@@ -15,7 +15,7 @@ export default class LastFm extends React.Component {
             artist: "",
             title: "",
             cover: "",
-            bgcolor: ""
+            bgcolor: [[],[],[]]
         };
     }
 
@@ -33,14 +33,14 @@ export default class LastFm extends React.Component {
             cover: track.image[1]["#text"]
         });
 
-        this.getColorFromCover(track.image[1]["#text"])
+        this.getColorsFromCover(track.image[1]["#text"])
     }
 
-    getColorFromCover(url) {
+    getColorsFromCover(url) {
         const img = new Image();
         img.onload = () => { 
             this.setState({
-                bgcolor: new ColorThief().getColor(img)
+                bgcolor: new ColorThief().getPalette(img, 3)
             });
         }
         img.crossOrigin = 'Anonymous';
@@ -56,7 +56,7 @@ export default class LastFm extends React.Component {
     render() {
         return (
             <div className="justify-items-center">
-                <LastFmComponent id="lastfm" style={{opacity: this.state.isPlaying ? "1" : "0.33", backgroundColor: 'rgba('+this.state.bgcolor[0]+','+this.state.bgcolor[1]+','+this.state.bgcolor[2]+',1)'}}>
+                <LastFmComponent id="lastfm" style={{opacity: this.state.isPlaying ? "1" : "0.33", backgroundColor: 'rgba('+this.state.bgcolor[0][0]+','+this.state.bgcolor[0][1]+','+this.state.bgcolor[0][2]+',1)'}}>
                     <LazyLoad
                         debounce={false}
                         offsetVertical={450}
@@ -67,7 +67,7 @@ export default class LastFm extends React.Component {
                             borderRadius: 2
                         }} alt="cover" src={this.state.cover} />
                     </LazyLoad>
-                    <TextComponent style={{color: 'rgba('+(this.state.bgcolor[0] > 128 ? 0 : 255)+','+(this.state.bgcolor[1] > 128 ? 0 : 255)+','+(this.state.bgcolor[2] > 128 ? 0 : 255)+',1)'}}>
+                    <TextComponent style={{color: 'rgba('+(this.state.bgcolor[2][0])+','+(this.state.bgcolor[2][1])+','+(this.state.bgcolor[2][2])+',1)'}}>
                         <Bolder> {this.state.artist}</Bolder> - <span> {this.state.title}</span> 
                     </TextComponent>
                 </LastFmComponent>
