@@ -2,9 +2,6 @@ import React from 'react';
 import styled from "styled-components";
 import tw from 'twin.macro';
 import LastFm from './lastfm';
-import Twitter from 'entypo-optimized/dist/icons/Twitter.svg'
-import GitHub from 'entypo-optimized/dist/icons/GitHub.svg'
-
 
 export default function Footer() {
 
