@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import ColorThief from 'colorthief/dist/color-thief.mjs'
+import LazyLoad from 'react-lazy-load';
 
 const googleProxyURL = 'https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&refresh=2592000&url=';
 
@@ -52,11 +53,18 @@ export default class LastFm extends React.Component {
         return (
             <div className="justify-items-center">
                 <LastFmComponent id="lastfm" style={{backgroundColor: 'rgba('+this.state.bgcolor[0]+','+this.state.bgcolor[1]+','+this.state.bgcolor[2]+',1)'}}>
-                    <img style={{
-                        margin: '0 1rem',
-                        boxShadow: '0 0 1px black',
-                        borderRadius: 2
-                    }} alt="cover" src={this.state.cover} />
+                    <LazyLoad 
+                        width={64}
+                        height={64}
+                        debounce={false}
+                        offsetVertical={450}
+                    >
+                        <img style={{
+                            margin: '0 1rem',
+                            boxShadow: '0 0 1px black',
+                            borderRadius: 2
+                        }} alt="cover" src={this.state.cover} />
+                    </LazyLoad>
                     <TextComponent style={{color: 'rgba('+(255-this.state.bgcolor[0])+','+(255-this.state.bgcolor[1])+','+(255-this.state.bgcolor[2])+',1)'}}>#NowPlaying
                         <span> {this.state.artist}</span> - <span> {this.state.title}</span> 
                     </TextComponent>

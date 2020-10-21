@@ -3,6 +3,7 @@ import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
 import styled from 'styled-components'
 import tw from 'twin.macro'
+import LazyLoad from 'react-lazy-load'
 
 const BlogList = ({ allBlogs }) => {
   function truncateSummary(content) {
@@ -23,10 +24,17 @@ const BlogList = ({ allBlogs }) => {
             <Link key={post.slug} href={{ pathname: `/blog/${post.slug}` }}>
                 <Flex>
                     <Column1_6 className="hero_image">
-                      <Img
-                        src={post.frontmatter.hero_image}
-                        alt={post.frontmatter.hero_image}
-                      />
+                      <LazyLoad 
+                          width={250}
+                          height={250}
+                          debounce={false}
+                          offsetVertical={300}
+                      >
+                        <Img
+                          src={post.frontmatter.hero_image}
+                          alt={post.frontmatter.hero_image}
+                        />
+                      </LazyLoad>
                     </Column1_6>
                     <Column5_6 className="blog__info">
                       <h2>{post.frontmatter.title}</h2>
