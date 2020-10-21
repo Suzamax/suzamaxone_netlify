@@ -14,6 +14,7 @@
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
     "colorthief": "^2.3.2",
+    "entypo-optimized": "https://github.com/adamwathan/entypo-optimized",
     "gray-matter": "^4.0.2",
     "next": "^9.5.5",
     "next-routes": "^1.4.2",
@@ -34,6 +35,7 @@
     "@babel/plugin-transform-async-to-generator": "^7.12.1",
     "@babel/plugin-transform-react-jsx": "^7.12.1",
     "@babel/types": "^7.12.1",
+    "@svgr/webpack": "^5.4.0",
     "autoprefixer": "^9.0.0",
     "babel-plugin-macros": "^2.8.0",
     "babel-preset-react": "^6.24.1",

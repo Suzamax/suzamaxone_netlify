@@ -3,6 +3,7 @@ import matter from 'gray-matter'
 import Layout from '../components/MainLayout'
 import BlogList from '../components/BlogList'
 import { Tailwind, Container } from '../components/styles'
+import Footer from '../components/Footer'
 
 const Index = props => {
   return (
@@ -23,6 +24,7 @@ const Index = props => {
           </section>
         </Container>
       </Layout>
+      <Footer />
     </Tailwind>
   )
 }

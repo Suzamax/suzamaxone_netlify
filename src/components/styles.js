@@ -6,5 +6,5 @@ export const Tailwind = styled.div`
 `
 
 export const Container = styled.section`
-  ${tw`container mx-auto px-5`}
+  ${tw`container w-2/3 mx-auto px-5`}
 `;

@@ -2,12 +2,10 @@ import React from 'react';
 import Link from "next/link";
 import styled from "styled-components";
 import tw from 'twin.macro';
-import LastFm from './lastfm';
 
 export default function Header(props) {
   return (
     <HeaderStyled className="header">
-      <LastFm/>
       <nav
         className="nav"
         role="navigation"
@@ -31,5 +29,5 @@ export default function Header(props) {
 }
 
 const HeaderStyled = styled.header`
-  ${tw`bg-gray-800 text-gray-100 p-1 text-center p-2`}
+  ${tw`bg-gray-800 w-2/3 m-3 mx-auto text-gray-100 text-center p-5 rounded-md shadow-md`}
 `;

@@ -11,7 +11,8 @@ const BlogList = ({ allBlogs }) => {
 
   function reformatDate(fullDate) {
     const date = new Date(fullDate)
-    return date.toDateString().slice(4)
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    return date.toLocaleDateString('es-ES', options)
   }
 
   return (
@@ -63,5 +64,5 @@ const Img = styled.img`
 `
 
 const Flex = styled.div`
-  ${tw`flex`}
+  ${tw`flex shadow-md m-2 bg-gray-400 bg-opacity-25 p-5`}
 `

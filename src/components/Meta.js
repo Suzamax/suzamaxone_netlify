@@ -1,6 +1,5 @@
 import React from 'react'
 import Head from 'next/head'
-import tw from 'twin.macro'
 
 export default function Meta(props) {
     return (
