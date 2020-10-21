@@ -64,7 +64,7 @@ export default function Footer() {
 }
 
 const FooterComponent = styled.footer`
-    ${tw`bg-gray-800 grid mx-auto text-white p-1 p-2 shadow-md md:w-2/3 grid-cols-2 m-3 rounded-md`}
+    ${tw`bg-gray-800 grid text-white p-1 p-2 shadow-md m-3 md:mx-auto md:w-2/3 md:grid-cols-2 md:rounded-md`}
 `;
 
 
