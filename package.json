@@ -38,6 +38,7 @@
     "@svgr/webpack": "^5.4.0",
     "autoprefixer": "^9.0.0",
     "babel-plugin-macros": "^2.8.0",
+    "babel-plugin-styled-components": "^1.11.1",
     "babel-preset-react": "^6.24.1",
     "postcss-cli": "^8.1.0",
     "tailwindcss": "^1.9.5",

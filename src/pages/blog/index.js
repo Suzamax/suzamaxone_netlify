@@ -1,25 +1,21 @@
 import React from 'react'
 import matter from 'gray-matter'
-import Layout from '../components/MainLayout'
-import BlogList from '../components/BlogList'
-import { Tailwind, Container } from '../components/styles'
+import Layout from '../../components/MainLayout'
+import BlogList from '../../components/BlogList'
+import { Tailwind, Container } from '../../components/styles'
 
-const Index = props => {
+const BlogIndex = props => {
   return (
     <Tailwind>
       <Layout
-        pathname="/"
+        pathname="/blog"
         siteTitle={props.title}
         siteDescription={props.description}
       >
         <Container>
-        <h1>¡Hola! 👋</h1>
-        <p>Soy un estudiante de ingeniería informática en la Universidad de Murcia.</p>
-        <p>También soy administrador de sistemas. Desarrollo webs, y me preparo para ser desarrollador y operador de sistemas (DevOps).</p>
-        <p>Esta web tiene mi blog y un CV actualizado (clic en Sobre mí).</p>
           <section>
-            <h1>Últimas entradas</h1>
-            <BlogList allBlogs={props.allBlogs.slice(-6, -1)} />
+            <h1>Entradas del blog</h1>
+            <BlogList allBlogs={props.allBlogs} />
           </section>
         </Container>
       </Layout>
@@ -27,10 +23,10 @@ const Index = props => {
   )
 }
 
-export default Index
+export default BlogIndex
 
 export async function getStaticProps() {
-  const siteConfig = await import(`../data/config.json`)
+  const siteConfig = await import(`../../data/config.json`)
   //get posts & context from folder
   const posts = (context => {
     const keys = context.keys()
@@ -53,7 +49,7 @@ export async function getStaticProps() {
       }
     })
     return data
-  })(require.context('../posts', true, /\.md$/))
+  })(require.context('../../posts', true, /\.md$/))
 
   return {
     props: {

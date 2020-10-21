@@ -37,6 +37,7 @@ export default function Meta(props) {
                     }
                     a {
                         text-decoration: none;
+                        border-bottom: 1px solid;
                         color: inherit;
                         transition: opacity 0.2s ease;
                     }

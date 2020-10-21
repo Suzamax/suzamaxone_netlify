@@ -18,7 +18,7 @@ const BlogList = ({ allBlogs }) => {
   return (
     <>
       <Reverse className="list">
-        {allBlogs.length > 1 &&
+        {allBlogs.length >= 1 &&
           allBlogs.map(post => {if (post.slug !== "undefined") return (
             <Link key={post.slug} href={{ pathname: `/blog/${post.slug}` }}>
                 <Flex>
@@ -30,12 +30,12 @@ const BlogList = ({ allBlogs }) => {
                     </Column1_6>
                     <Column5_6 className="blog__info">
                       <h2>{post.frontmatter.title}</h2>
-                      <h3> {reformatDate(post.frontmatter.date)}</h3>
-                      <p>
+                      <h3 suppressHydrationWarning> {reformatDate(post.frontmatter.date)}</h3>
+                      
                         <ReactMarkdown
                           source={post.frontmatter.description}
                         />
-                      </p>
+                      
                     </Column5_6>
                 </Flex>
             </Link>
@@ -64,5 +64,5 @@ const Img = styled.img`
 `
 
 const Flex = styled.div`
-  ${tw`flex shadow-md m-2 bg-gray-400 bg-opacity-25 p-5 rounded-md`}
+  ${tw`flex cursor-pointer shadow-md m-2 bg-gray-400 bg-opacity-25 p-5 rounded-md`}
 `

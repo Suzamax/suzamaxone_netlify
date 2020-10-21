@@ -15,7 +15,10 @@ export default function PostTemplate(props) {
 
   return (
     <Tailwind>
-      <Layout>
+      <Layout
+        siteTitle={props.title}
+        siteDescription={props.description}
+      >
         <Container>
           <h1>{props.frontmatter.title}</h1>
           <h2>{reformatDate(props.frontmatter.date)}</h2>
