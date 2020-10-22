@@ -59,16 +59,16 @@ const Reverse = styled.div`
 `
 
 const Column5_6 = styled.div`
-  ${tw`w-5/6`}
+  ${tw`w-5/6 m-5 px-5`}
 `
 const Column1_6 = styled.div`
   ${tw`w-1/6`}
 `
 
 const Img = styled.img`
-  ${tw`p-2`}
+  ${tw`m-3 rounded-lg`}
 `
 
 const Flex = styled.div`
-  ${tw`flex cursor-pointer shadow-md m-2 bg-gray-400 bg-opacity-25 p-5 rounded-md`}
+  ${tw`flex cursor-pointer shadow-md m-2 bg-gray-400 bg-opacity-25 rounded-md`}
 `
