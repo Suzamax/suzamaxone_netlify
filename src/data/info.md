@@ -1,13 +1,13 @@
 ---
-title: info page
+title: Sobre mí
 ---
-# Quién soy
+# Un breve resumen sobre mí
 
-Administrador de sistemas informáticos y de redes, DevOps, desarrollador web frontend y backend
+Administrador de sistemas informáticos y de redes, DevOps, desarrollador web frontend y backend.
 
 Desarrollo principalmente en JavaScript/TypeScript y PHP, usando React, Vue, ExpressJS, Laravel, Symfony y similares. He desarrollado algunos proyectos con ello, échale un vistazo abajo.
 
-## Sobre mí
+## Quién soy
 
 Soy una persona de mente inquieta. Siempre dispuesto a aprender algo nuevo cada vez que lo necesito o simplemente por curiosidad. Empecé a trastear con ordenadores desde que tengo memoria (¡un Windows 3.1!). A mí me fascinó lo que esa máquina hacía. Desde entonces, he ido trasteando siempre que he podido con los ordenadores de la casa. Eventualmente llegué a conocer Linux, macOS... y no he parado de aprender más sobre ellos.
 

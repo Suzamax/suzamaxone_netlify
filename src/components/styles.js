@@ -8,3 +8,7 @@ export const Tailwind = styled.div`
 export const Container = styled.section`
   ${tw`container md:w-2/3 mx-auto px-5`}
 `;
+
+export const DateSmall = styled.p`
+  ${tw`text-xs`}
+`

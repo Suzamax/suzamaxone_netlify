@@ -45,6 +45,7 @@ export default class MyDocument extends Document {
             }}
           />
           {this.props.styleTags}
+          <link rel="shortcut icon" href="/favicon.ico" />
         </Head>
         <body>
           <script src="noflash.js" />

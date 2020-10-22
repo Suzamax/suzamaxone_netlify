@@ -15,11 +15,11 @@ export default function Header(props) {
           <a><h1>{props.siteTitle || "Carlos Cañellas"}</h1></a>
         </Link>
           <Link href={`${typeof window !== "undefined" &&
-          window.location.pathname == "/about" ?
+          window.location.pathname !== "/" ?
           "/" : "/about"}`}>
             <LinkButton>
             {`${typeof window !== "undefined" &&
-          window.location.pathname == "/about" ?
+          window.location.pathname !== "/" ?
           "Inicio" : "Sobre mí"}`}
             </LinkButton>
           </Link>

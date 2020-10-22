@@ -5,7 +5,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import ReactMarkdown from 'react-markdown'
 import Layout from '../../components/MainLayout'
-import { Tailwind, Container } from '../../components/styles'
+import { Tailwind, Container, DateSmall } from '../../components/styles'
 
 export default function PostTemplate(props) {
   function reformatDate(fullDate) {
@@ -17,12 +17,11 @@ export default function PostTemplate(props) {
   return (
     <Tailwind>
       <Layout
-        siteTitle={props.title}
-        siteDescription={props.description}
+        siteTitle={props.frontmatter.title}
+        siteDescription={props.frontmatter.description}
       >
         <Container>
-          <h1>{props.frontmatter.title}</h1>
-          <h2>{reformatDate(props.frontmatter.date)}</h2>
+          <DateSmall>Publicado el {reformatDate(props.frontmatter.date)}</DateSmall>
           <ReactMarkdown source={props.markdownBody} />
         </Container>
       </Layout>
@@ -64,3 +63,4 @@ export async function getStaticProps({ ...ctx }) {
     },
   }
 }
+

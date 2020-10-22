@@ -5,14 +5,14 @@ import matter from 'gray-matter'
 import ReactMarkdown from 'react-markdown'
 import { Container, Tailwind } from '../components/styles'
 
-export default function Info({ frontmatter, markdownBody, title }) {
+export default function Info({ frontmatter, markdownBody }) {
   return (
     <Tailwind>
         <Layout
-        pathname="about"
-        bgColor={frontmatter.background_color}
-        siteTitle={title}
-      >
+          pathname="about"
+          bgColor={frontmatter.background_color}
+          siteTitle={frontmatter.title}
+        >
         <Container>
 
           <section className="info_blurb">
