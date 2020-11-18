@@ -5,27 +5,37 @@ import path from 'path'
 import matter from 'gray-matter'
 import ReactMarkdown from 'react-markdown'
 import Layout from '../../components/MainLayout'
-import { Tailwind, Container, DateSmall } from '../../components/styles'
 
 export default function PostTemplate(props) {
   function reformatDate(fullDate) {
     const date = new Date(fullDate)
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    return date.toLocaleDateString('es-ES', options)
+    return date.toLocaleDateString('en-US', options)
   }
 
   return (
-    <Tailwind>
       <Layout
         siteTitle={props.frontmatter.title}
         siteDescription={props.frontmatter.description}
       >
-        <Container>
-          <DateSmall>Publicado el {reformatDate(props.frontmatter.date)}</DateSmall>
-          <ReactMarkdown source={props.markdownBody} />
-        </Container>
+        <article>
+          <header className="bg-blue sans-serif">
+            <div className="mw9 center pa4 pt5-ns ph7-l">
+              <time className="f6 mb2 dib ttu tracked"><small>{reformatDate(props.frontmatter.date)}</small></time>
+              <h3 className="f2 f1-m f-headline-l measure-narrow lh-title mv0">
+              <span className="bg-black-90 lh-copy white pa1 tracked-tight">
+                {props.frontmatter.title}
+              </span>
+              </h3>
+              <h4 className="f3 fw1 georgia i">{props.frontmatter.description}</h4>
+              <h5 className="f6 ttu tracked black-80">{props.frontmatter.language}</h5>
+            </div>
+          </header>
+          <div className="pa4 ph7-l georgia mw9-l center">
+            <ReactMarkdown source={props.markdownBody} />
+          </div>
+        </article>
       </Layout>
-    </Tailwind>
   )
 }
 

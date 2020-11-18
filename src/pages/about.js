@@ -3,24 +3,22 @@ import React from 'react'
 import Layout from '../components/MainLayout'
 import matter from 'gray-matter'
 import ReactMarkdown from 'react-markdown'
-import { Container, Tailwind } from '../components/styles'
 
 export default function Info({ frontmatter, markdownBody }) {
   return (
-    <Tailwind>
         <Layout
           pathname="about"
           bgColor={frontmatter.background_color}
           siteTitle={frontmatter.title}
         >
-        <Container>
-
-          <section className="info_blurb">
+        <article class="pa3 pa5-ns">
+          <h1 class="f3 f1-m f-headline-l">Who am I?</h1>
+          <section className="lh-copy measure mt4 mt0-ns info_blurb">
             <ReactMarkdown source={markdownBody} />
+
           </section>
-        </Container>
+        </article>
       </Layout>      
-    </Tailwind>
   )
 }
 

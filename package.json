@@ -22,15 +22,16 @@
     "node-sass": "^4.14.1",
     "raw-loader": "^4.0.2",
     "react": "^16.14.0",
+    "react-addons-transition-group": "^15.6.2",
     "react-dom": "^16.14.0",
     "react-ga": "^3.2.0",
     "react-lazy-load": "^3.1.13",
     "react-markdown": "^5.0.0",
+    "react-transition-group": "^4.4.1",
     "remark-parse": "^9.0.0",
     "remark-react": "^8.0.0",
     "styled-components": "^5.2.0",
-    "unified": "^9.2.0",
-    "use-dark-mode": "^2.3.1"
+    "unified": "^9.2.0"
   },
   "devDependencies": {
     "@babel/plugin-transform-async-to-generator": "^7.12.1",
@@ -43,7 +44,6 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-react": "^6.24.1",
     "postcss-cli": "^8.1.0",
-    "tailwindcss": "^1.9.5",
-    "twin.macro": "^1.11.0"
+    "styled-tachyons": "^1.1.0"
   }
 }

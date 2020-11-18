@@ -1,8 +1,5 @@
 import React from "react"
-import styled from "styled-components"
 import ColorThief from 'colorthief/dist/color-thief.mjs'
-import LazyLoad from 'react-lazy-load';
-import tw from "twin.macro";
 
 const googleProxyURL = 'https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&refresh=2592000&url=';
 
@@ -30,7 +27,7 @@ export default class LastFm extends React.Component {
             artist: track.artist['#text'],
             title: track.name,
             isPlaying: isplaying,
-            cover: track.image[1]["#text"]
+            cover: track.image[3]["#text"]
         });
 
         this.getColorsFromCover(track.image[1]["#text"])
@@ -55,6 +52,42 @@ export default class LastFm extends React.Component {
 
     render() {
         return (
+        <div style={{
+            color: 'rgba('+this.state.bgcolor[2][0]+','+this.state.bgcolor[2][1]+','+this.state.bgcolor[2][2]+',1)'
+        }}>
+            <section id="lastfm" style={{
+                opacity: this.state.isPlaying ? "1" : "0.33", 
+                backgroundColor: 'rgba('+this.state.bgcolor[0][0]+','+this.state.bgcolor[0][1]+','+this.state.bgcolor[0][2]+',1)',
+            }}>
+                <div className="mw9 center">
+                    <h2 className="f3 fw4 pa3 mv0">What I'm listening</h2>
+                    <div className="cf ph2-ns">
+
+                        <div className="fl w-100 w-50-ns pa2" style={{color: 'rgba('+(this.state.bgcolor[1][0])+','+(this.state.bgcolor[1][1])+','+(this.state.bgcolor[1][2])+',1)'}}>
+                            <p className="f5 lh-copy measure-narrow">I do listen too much music!</p>
+                            <p className="f5 lh-copy measure-narrow">Check my Last.fm and see what I listen... and even listen to it too!</p>
+                            <p className="f5 lh-copy measure-narrow">BTW most music I listen to is EDM and rock.</p>
+                        </div>
+                        <div className="fl w-100 w-30-ns pa2"></div>
+                        <div className="fl w-100 w-20-ns pa2">
+                            <div className="tc pa2">
+                                <div className="w-100-ns pa2 tc">
+                                    <img src={this.state.cover} alt={this.state.title + " - " + this.state.artist} className="w-100 db outline black-10"/>
+                                    <dl className="mt2 f6 lh-copy">
+                                    <dt className="clip">Title</dt>
+                                    <dd className="ml0 truncate w-100">{this.state.title}</dd>
+                                    <dt className="clip">Artist</dt>
+                                    <dd className="ml0 truncate w-100" style={{color: 'rgba('+(this.state.bgcolor[1][0])+','+(this.state.bgcolor[1][1])+','+(this.state.bgcolor[1][2])+',1)'}}>{this.state.artist}</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        )
+        /*
             <div className="justify-items-center">
                 <LastFmComponent id="lastfm" style={{
                     opacity: this.state.isPlaying ? "1" : "0.33", 
@@ -76,25 +109,6 @@ export default class LastFm extends React.Component {
                     </TextComponent>
                 </LastFmComponent>
             </div>
-        )
+        ) */
     } 
 }
-
-const LastFmComponent = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 2rem;
-    ${tw`shadow text-xs`}
-    border-radius: 2px;
-    max-width: fit-content;
-    margin: 3rem auto;
-`;
-
-const TextComponent = styled.div`
-    padding-right: 1rem;
-`;
-
-const Bolder = styled.span`
-    font-weight: 700;
-`

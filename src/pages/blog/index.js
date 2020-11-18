@@ -3,24 +3,21 @@ import React from 'react';
 import matter from 'gray-matter'
 import Layout from '../../components/MainLayout'
 import BlogList from '../../components/BlogList'
-import { Tailwind, Container } from '../../components/styles'
 
 const BlogIndex = props => {
   return (
-    <Tailwind>
+    <>
       <Layout
         pathname="/blog"
-        siteTitle={props.title}
+        siteTitle="Blog"
         siteDescription={props.description}
       >
-        <Container>
-          <section>
-            <h1>Entradas del blog</h1>
+          <section className="mw7 center avenir">
+          <h1 className="baskerville fw1 ph3 ph0-l">My Blog</h1>
             <BlogList allBlogs={props.allBlogs} />
           </section>
-        </Container>
       </Layout>
-    </Tailwind>
+    </>
   )
 }
 

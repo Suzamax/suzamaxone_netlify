@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
 import styled from 'styled-components'
-import tw from 'twin.macro'
+import ta from 'styled-tachyons'
 import LazyLoad from 'react-lazy-load'
 
 const BlogList = ({ allBlogs }) => {
@@ -13,62 +13,52 @@ const BlogList = ({ allBlogs }) => {
   function reformatDate(fullDate) {
     const date = new Date(fullDate)
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    return date.toLocaleDateString('es-ES', options)
+    return date.toLocaleDateString('en-US', options)
   }
 
   return (
     <>
-      <Reverse className="list">
         {allBlogs.length >= 1 &&
           allBlogs.map(post => {if (post.slug !== "undefined") return (
             <Link key={post.slug} href={{ pathname: `/blog/${post.slug}` }}>
                 <Flex>
-                    <Column1_6 className="hero_image">
+                <article className="bt bb b--black-10">
+                  <a className="db pv4 ph3 ph0-l no-underline black dim" href="#0">
+                    <div className="flex flex-column flex-row-ns">
+                      <div className="pr3-ns mb4 mb0-ns w-100 w-40-ns">
                       <LazyLoad 
                           debounce={false}
                           offsetVertical={300}
                       >
-                        <Img
-                          src={post.frontmatter.hero_image}
-                          alt={post.frontmatter.hero_image}
-                        />
+                        <img src={post.frontmatter.hero_image}
+                          alt={post.frontmatter.hero_image} classNameName="db" />
                       </LazyLoad>
-                    </Column1_6>
-                    <Column5_6 className="blog__info">
-                      <h2>{post.frontmatter.title}</h2>
-                      <h3 suppressHydrationWarning> {reformatDate(post.frontmatter.date)}</h3>
-                      
+                      </div>
+                      <div className="w-100 w-60-ns pl3-ns">
+                        <h1 className="f3 fw1 baskerville mt0 lh-title">{post.frontmatter.title}</h1>
+                        <p className="f6 f5-l lh-copy">
                         <ReactMarkdown
                           source={post.frontmatter.description}
                         />
-                      
-                    </Column5_6>
+                        </p>
+                        <p className="f6 lh-copy mv0">{reformatDate(post.frontmatter.date)}</p>
+                        <h5 className="f6 ttu tracked black-80">{post.frontmatter.language}</h5>
+
+                      </div>
+                    </div>
+                  </a>
+                </article>
+                    
                 </Flex>
             </Link>
             
-          )})}
-      </Reverse>
+          )}).reverse()}
     </>
   )
 }
 
 export default BlogList
 
-const Reverse = styled.div`
-  ${tw`flex flex-col-reverse`}
-`
-
-const Column5_6 = styled.div`
-  ${tw`w-5/6 m-5 px-5`}
-`
-const Column1_6 = styled.div`
-  ${tw`w-1/6`}
-`
-
-const Img = styled.img`
-  ${tw`m-3 rounded-lg`}
-`
-
 const Flex = styled.div`
-  ${tw`flex cursor-pointer shadow-md m-2 bg-gray-400 bg-opacity-25 rounded-md`}
+  ${ta`flex`}
 `

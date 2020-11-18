@@ -5,6 +5,7 @@ title: Integrando TailwindCSS en Next.js para un proyecto
 description: Un tutorial para solucionar los posibles problemas que surjan al
   realizar la implementación
 hero_image: '/assets/twnxt.png'
+language: Español
 ---
 
 Para utilizar Tailwind con el framework Next.js he tenido que implementar Babel y ajustar un par de cosillas. Además, personalmente prefiero usar Sass, así que eso también lo he añadido en la configuración de Next.js. A continuación unas instrucciones para que salga bien.

@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import * as gtag from '../lib/gtag'
-import Providers from '../components/Providers'
 import "../styles/style.css"
 
 const MyApp = ({ Component, pageProps }) => {
@@ -17,9 +16,7 @@ const MyApp = ({ Component, pageProps }) => {
   }, [router.events])
 
   return (
-    <Providers>
       <Component {...pageProps} />
-    </Providers>
   )
 }
 

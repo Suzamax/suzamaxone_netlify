@@ -5,23 +5,19 @@ import Footer from './Footer'
 
 export default function Layout(props) {
   return (
-    <section
-      className={`layout ${
+    <div
+      className={`layout sans-serif ${
         props.pathname == "info" &&
         "info_page"}`
       }
-      style={{
-        backgroundColor: `${props.bgColor && props.bgColor}`,
-        color: `${props.pathname == "info" && 'white'}`
-      }}
     >
       <Meta
         siteTitle={props.siteTitle}
         siteDescription={props.siteDescription}
       />
       <Header siteTitle={props.siteTitle} />
-      <div className="content">{props.children}</div>
+      <main className="content">{props.children}</main>
       <Footer />
-    </section>
+    </div>
   );
 }

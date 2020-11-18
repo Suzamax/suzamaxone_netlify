@@ -1,58 +1,59 @@
 ---
-title: Sobre mí
+title: About me
 ---
-# Un breve resumen sobre mí
+# A brief summary about me
 
-Administrador de sistemas informáticos y de redes, DevOps, desarrollador web frontend y backend.
+Sysadmin, aspiring to be DevOps, frontend & backend web developer. 
 
-Desarrollo principalmente en JavaScript/TypeScript y PHP, usando React, Vue, ExpressJS, Laravel, Symfony y similares. He desarrollado algunos proyectos con ello, échale un vistazo abajo.
+I'm a curious person, always willing to learn something new, if I need to or just for fun.
 
-## Quién soy
+I started using computers so long ago (Windows 3.1!). Fascinated by what did that machine, I decided to use them and comprehend how they work, what I can do with them... I met Linux, OS X, and more, and I didn't stop learning!
 
-Soy una persona de mente inquieta. Siempre dispuesto a aprender algo nuevo cada vez que lo necesito o simplemente por curiosidad. Empecé a trastear con ordenadores desde que tengo memoria (¡un Windows 3.1!). A mí me fascinó lo que esa máquina hacía. Desde entonces, he ido trasteando siempre que he podido con los ordenadores de la casa. Eventualmente llegué a conocer Linux, macOS... y no he parado de aprender más sobre ellos.
+# My degrees
 
-Soy técnico superior de Administración de Sistemas Informáticos y Redes por el IES Ingeniero de la Cierva, y actualmente estudio Ingeniería Informática en la Universidad de Murcia.
+I'm a Sysadmin titulated from IES Ingeniero de la Cierva. Currently studying CS degree at Universidad de Murcia.
 
-## Conocimientos
+## Skills and knowledge
 
-Lo que más he tocado han sido sistemas operativos y programación web, tanto en frontend como en backend, pero siempre se me queda corto, así que intento aprender todo aquello que pueda serme útil ahora y en el futuro.
+Operating systems, web development and more!
 
-### Tecnologías que he manejado
+### Technologies I used
 
-#### Sistemas operativos, virtualización, contenerización
+#### Operating systems, virtualization, containerization, orchestration...
 
-* Conozco Linux desde los 12 años. Empecé con Ubuntu 8.04 y desde entonces he probado infinidad de distribuciones. Entre ellas: Red Hat, Fedora, SUSE, Arch, Gentoo...
-* Otros sistemas que he ido usando son: Microsoft Windows, desde 3.1 hasta 10, pasando por Server desde 2008; macOS desde Snow Leopard; Android desde Lollipop.
-* He virtualizado usando VirtualBox, Linux KVM/QEMU, Hyper-V, y Vagrant para todos ellos.
-* He tocado Docker en algunos proyectos pequeños en los que he usado tanto Dockerfile como Docker Compose, y OpenStack, siendo este mi proyecto de final de grado superior, además de orquestar servidores con Ansible.
+* I started using Linux with Ubuntu 8.04. Ever since then I tried a long list of distributions, like Red Hat, Fedora, SUSE, Arch, Gentoo...
+* Other systems I used: Microsoft Windows, from 3.1 to 10, Server since 2008; macOS since Snow Leopard; Android since Lollipop, iOS...
+* I like VMs. Also, I do Hackintosh :P
+* Docker, docker-compose, OpenStack, Ansible...
 
-#### Desarrollo frontend
+#### Frontend
 
-##### Frameworks JavaScript
+##### JavaScript Frameworks
 
 * React
 * Vue
-* Next.js (Basado en React) - ¡Usado en esta web!
-* Interesado en aprender Angular
+* Next.js (React-based)
+* Wanting to learn Angular
 
-##### Frameworks CSS
+##### CSS Frameworks
 
 * Bootstrap
 * Bulma
 * Theme UI 
 * Tachyons
+* Tailwind
 
-#### Desarrollo backend
+#### Backend
 
-Conozco APIs, MVC, HTTP REST, sockets web...
+APIs, MVC, HTTP REST, websockets...
 
-##### PHP
+##### Frameworks
 
-* Laravel, Symfony, también he trasteado con CodeIgniter, CakePHP, Slim...
-* JavaScript (Node JS) y otros
-* Express JS, MongoDB, GraphQL... También he usado TypeScript para frontend y backend.
+* Laravel, Symfony, dealt with CodeIgniter, CakePHP, Slim...
+* JavaScript (Node.js)
+* ExpressJS, MongoDB, GraphQL...
 
-## Experiencia y estudios
+## Experience (Spanish)
 
 ### Prácticas de empresa de Formación Profesional
 #### GRUPO SYS4NET, S.L.

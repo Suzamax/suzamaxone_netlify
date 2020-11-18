@@ -1,5 +1,14 @@
-/* Importo también la tipografía */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap');
-@import "tailwindcss/base";
-@import "tailwindcss/components"; 
-@import "tailwindcss/utilities";
+.textchange {
+    opacity: 1;
+    transition: opacity 0.2s linear;
+}
+  
+.textchange.fadeOut {
+    opacity: 0 !important;
+}
+
+#whoami {
+    background-image: url('/assets/Cat_and_laptop.jpg');
+    background-repeat: no-repeat;
+    background-position: 100%;
+}
