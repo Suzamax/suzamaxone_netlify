@@ -11,11 +11,11 @@ export default function Layout(props) {
         "info_page"}`
       }
     >
+      <Header />
       <Meta
         siteTitle={props.siteTitle}
         siteDescription={props.siteDescription}
       />
-      <Header siteTitle={props.siteTitle} />
       <main className="content">{props.children}</main>
       <Footer />
     </div>

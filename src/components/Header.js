@@ -4,9 +4,9 @@ import styled from "styled-components";
 
 export default function Header(props) {
   return (
-    <header className="bg-navy header">
+    <header className="bg-white header">
       <nav className="flex justify-between bb b--white-10 mw9 center">
-          <a className="link white-70 hover-white no-underline flex items-center pa3" href="/">
+          <a className="link black hover-gray no-underline flex items-center pa3" href="/">
             <svg
               className="dib h1 w1"
               data-icon="grid"
@@ -21,10 +21,6 @@ export default function Header(props) {
             <span className="pl3">Carlos Cañellas</span>
 
           </a>
-          <div className="flex-grow pa3 flex items-center">
-              <a className="f6 link dib white dim mr3 mr4-ns" href="/about">About</a>
-              <a className="f6 link dib white dim mr3 mr4-ns" href="/blog">Blog</a>
-          </div>
         </nav>
   </header>
   )

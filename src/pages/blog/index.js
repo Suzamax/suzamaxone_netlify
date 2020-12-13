@@ -13,7 +13,7 @@ const BlogIndex = props => {
         siteDescription={props.description}
       >
           <section className="mw7 center avenir">
-          <h1 className="baskerville fw1 ph3 ph0-l">My Blog</h1>
+          <h1 className="baskerville fw1 ph3 ph0-l">Carlos' Blog</h1>
             <BlogList allBlogs={props.allBlogs} />
           </section>
       </Layout>

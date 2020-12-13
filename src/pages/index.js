@@ -57,24 +57,30 @@ const Index = props => {
           </h2>
 
         </section>
-        <section id="whoami" className="pw3 pw5-ns pb5-ns bt bb b--black-10">
-                <div className="mw9 center">
-                <h2 className="f3 fw4 pa3 mv0 black">Who am i?</h2>
-
-                    <div className="cf ph2-ns">
-                        <div className="fl w-100 w-50-ns pa2">
-                            <p className="f5 lh-copy measure-narrow bg-near-white o-90">I'm a open minded and curious person, ready to learn and develop new things using the right tools.
-                            </p>
-                            <p className="f5 lh-copy measure-narrow bg-near-white o-90">I study at Universidad de Murcia and develop sites alongside <a href="https://www.instagram.com/p/CHqTPPYBj8s/">my pet</a>.
-                            </p>
-                        </div>
-                        <div className="fl w-100 w-50-ns tr pa2">
-                            <p>Meow?</p>
-                        </div>
-                    </div>
+        <div class="mw9 center ph3-ns">
+            <div class="flex cf ph2-ns">
+              <div class="fl w-100 w-20-ns dt pa2">
+                <div id="whoami" class="ba shadow-5 white dtc v-btm h5 br4 b--light-gray">
+                    <h1 class="f3 ph3 measure-narrow">What do I do?</h1>
+                    <p class="f6 pa3 lh-copy measure-narrow">I study at Universidad de Murcia and develop sites alongside <a class="light-gray" href="https://www.instagram.com/p/ByOGD-aCWog/">my pet</a>.
+                    </p>
                 </div>
-            </section>
-        <LastFm />
+              </div>
+              <div class="fl w-100 w-20-ns dt pa2">
+                <a href="/about" class="no-underline dim ba shadow-5 bg-blue white dtc v-btm h5 br4 b--light-gray">
+                  <p className="f4 pa3 lh-copy measure-narrow">I'm a open minded and curious person, ready to learn and develop new things using the right tools. Know more about me here!</p>
+                </a>
+              </div>
+              <div class="fl w-100 w-20-ns dt pa2">
+                <a href="/blog" id="blog" class="no-underline shadow-5 dim ba white dtc v-btm h5 br4 b--light-gray">
+                  <p className="f5 pa3 lh-copy measure-narrow">I do have a blog and I update it sometimes, just check it out!</p>
+                </a>
+              </div>
+              <div class="fl w-100 w-40-ns pa2">
+                <LastFm />
+              </div>
+            </div>
+        </div>
       </Layout>
   )
 }
