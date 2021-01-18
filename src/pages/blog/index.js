@@ -12,7 +12,8 @@ const BlogIndex = props => {
         siteTitle="Blog"
         siteDescription={props.description}
       >
-          <section className="mw7 center avenir">
+          <section className="mw9 center pa4 pt5-ns ph7-l center avenir">
+            <a href="/" class="sans-serif black"> &lt; Back to the main page</a>
           <h1 className="baskerville fw1 ph3 ph0-l">Carlos' Blog</h1>
             <BlogList allBlogs={props.allBlogs} />
           </section>

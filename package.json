@@ -12,6 +12,10 @@
   "author": "Carlos Cañellas <ratiosu.cct@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-brands-svg-icons": "^5.15.2",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "@zeit/next-sass": "^1.0.1",
     "colorthief": "^2.3.2",
     "entypo-optimized": "https://github.com/adamwathan/entypo-optimized",

@@ -11,7 +11,10 @@ export default function Info({ frontmatter, markdownBody }) {
           bgColor={frontmatter.background_color}
           siteTitle={frontmatter.title}
         >
+
         <article class="mw9 center pa4 pt5-ns ph7-l">
+        <a href="/" class="sans-serif black"> &lt; Back to the main page</a>
+
           <h1 class="f3 f1-m f-headline-l">Who am I?</h1>
           <section className="lh-copy measure mt4 mt0-ns info_blurb">
             <ReactMarkdown source={markdownBody} />

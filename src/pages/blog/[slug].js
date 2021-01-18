@@ -19,7 +19,7 @@ export default function PostTemplate(props) {
         siteDescription={props.frontmatter.description}
       >
         <article>
-          <header className="bg-blue sans-serif">
+          <div className="bg-blue sans-serif">
             <div className="mw9 center pa4 pt5-ns ph7-l">
               <time className="f6 mb2 dib ttu tracked"><small>{reformatDate(props.frontmatter.date)}</small></time>
               <h3 className="f2 f1-m f-headline-l measure-narrow lh-title mv0">
@@ -30,7 +30,7 @@ export default function PostTemplate(props) {
               <h4 className="f3 fw1 georgia i">{props.frontmatter.description}</h4>
               <h5 className="f6 ttu tracked black-80">{props.frontmatter.language}</h5>
             </div>
-          </header>
+          </div>
           <div className="pa4 ph7-l georgia mw9-l center">
             <ReactMarkdown source={props.markdownBody} />
           </div>

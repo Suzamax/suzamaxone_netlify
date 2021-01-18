@@ -11,7 +11,6 @@ export default function Layout(props) {
         "info_page"}`
       }
     >
-      <Header />
       <Meta
         siteTitle={props.siteTitle}
         siteDescription={props.siteDescription}

@@ -52,29 +52,23 @@ export default class LastFm extends React.Component {
 
     render() {
         return (
-        <div class="ba contain br4 shadow-5 b--light-gray" id="lastfm"
+        <div class="w-100 w-25-ns contain br2 shadow-4" id="lastfm"
             style={{
-            color: 'rgba('+this.state.bgcolor[2][0]+','+this.state.bgcolor[2][1]+','+this.state.bgcolor[2][2]+',1)',
+            color: 'rgba(' +
+                this.state.bgcolor[2][0] + ',' + this.state.bgcolor[2][1] + ',' + this.state.bgcolor[2][2] + ',1)',
                 opacity: this.state.isPlaying ? "1" : "0.33", 
-                backgroundImage: 'linear-gradient(90deg, rgba('+this.state.bgcolor[0][0]+','+this.state.bgcolor[0][1]+','+this.state.bgcolor[0][2]+',1) 57%, rgba('+this.state.bgcolor[1][0]+','+this.state.bgcolor[1][1]+','+this.state.bgcolor[1][2]+',0) 100%), url(' + this.state.cover +')',
+                backgroundImage: 'url(' + this.state.cover +'), linear-gradient(90deg, rgba('+this.state.bgcolor[0][0]+','+this.state.bgcolor[0][1]+','+this.state.bgcolor[0][2]+',1) 0%, rgba('+this.state.bgcolor[1][0]+','+this.state.bgcolor[1][1]+','+this.state.bgcolor[1][2]+',1) 90%)',
                 backgroundPosition: 'right',
                 backgroundRepeat: 'no-repeat'
             }}>
-                <div className="cf h5 ph3">
-                    <div className="fl w-100 w-50-ns pa3 " style={{color: 'rgba('+(this.state.bgcolor[1][0])+','+(this.state.bgcolor[1][1])+','+(this.state.bgcolor[1][2])+',1)'}}>
-                        <p className="f3 bold measure-narrow">I ❤️ Music!</p>
-                        <p className="f5 measure-narrow">Check my <a href="https://last.fm/user/suzamax" style={{
-                            color: 'rgba('+this.state.bgcolor[0][0]+','+this.state.bgcolor[0][1]+','+this.state.bgcolor[0][2]+',1)',
-                            backgroundColor: 'rgba('+this.state.bgcolor[1][0]+','+this.state.bgcolor[1][1]+','+this.state.bgcolor[1][2]+',1)',
-                            backgroundBlendMode: 'multiply'
-                        }}>Last.fm</a>!</p>
-                        <p className="f5 measure-narrow">I'm currently listening to:</p>
-                    <dl className="mt2 f6 lh-copy">
-                                <dt className="clip">Title</dt>
-                                <dd className="ml0 truncate w-100">{this.state.title}</dd>
-                                <dt className="clip">Artist</dt>
-                                <dd className="ml0 truncate w-100" style={{color: 'rgba('+(this.state.bgcolor[1][0])+','+(this.state.bgcolor[1][1])+','+(this.state.bgcolor[1][2])+',1)'}}>{this.state.artist}</dd>
-                                </dl>
+                <div className="cf  ">
+                    <div className="fl white">
+                        <dl className="ml3 br2 f6 lh-copy w-50 w-100-ns pa2 bg-black-20">
+                            <dt className="clip">Title</dt>
+                            <dd className="ml0 truncate w-100">{this.state.title}</dd>
+                            <dt className="clip">Artist</dt>
+                            <dd className="ml0 truncate w-100 white b">{this.state.artist}</dd>
+                        </dl>
                     </div>
                 </div>
             </div>

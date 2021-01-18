@@ -1,27 +1,51 @@
-import React from 'react';
-import Link from "next/link";
-import styled from "styled-components";
+import React, { useRef, useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faInfoCircle, faRssSquare, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faGithub, faInstagram, faLinkedin, faTelegram, faTwitch, faTwitter } from '@fortawesome/free-brands-svg-icons'
+
 
 export default function Header(props) {
-  return (
-    <header className="bg-white header">
-      <nav className="flex justify-between bb b--white-10 mw9 center">
-          <a className="link black hover-gray no-underline flex items-center pa3" href="/">
-            <svg
-              className="dib h1 w1"
-              data-icon="grid"
-              viewBox="0 0 32 32"
-              style={{
-                fill: "currentcolor"
-              }}>
-              <title>Super Normal Icon Mark</title>
-              <path d="M2 2 L10 2 L10 10 L2 10z M12 2 L20 2 L20 10 L12 10z M22 2 L30 2 L30 10 L22 10z M2 12 L10 12 L10 20 L2 20z M12 12 L20 12 L20 20 L12 20z M22 12 L30 12 L30 20 L22 20z M2 22 L10 22 L10 30 L2 30z M12 22 L20 22 L20 30 L12 30z M22 22 L30 22 L30 30 L22 30z">
-              </path>
-            </svg>
-            <span className="pl3">Carlos Cañellas</span>
 
-          </a>
-        </nav>
-  </header>
-  )
+    const headerRef = useRef()
+    const nickRef = useRef()
+    const siameseRef = useRef()
+    const handleScroll = () => {
+        headerRef.current.style.backgroundSize = 100 + window.scrollY * 1.4 + '%';
+        nickRef.current.style.fontSize = 400 - (document.documentElement.scrollTop * 4) + 'px';
+        siameseRef.current.style.bottom = -2 * window.scrollY + 'px';
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    return (
+        <header ref={headerRef} >
+            <div class="mobile bg-light-blue pa3">
+            <FontAwesomeIcon icon={faInfoCircle} /> This page is cooler on desktop or iPad.
+            </div>
+            <nav class="cf">
+                <a href="/" class="fl w-50 w-10-ns tc pa3 bg-red">Home</a>
+                <a href="/about" class="fl w-25 w-10-ns tc pa3 bg-black-20"> Me <FontAwesomeIcon icon={faUser} /></a>
+                <a href="/blog" class="fl w-25 w-10-ns tc pa3 bg-black-30"> Blog <FontAwesomeIcon icon={faRssSquare} /></a>
+                <a href="https://twitter.com/Suzamax" class="fl w-25 w-10-ns tc pa3 bg-black-40"><FontAwesomeIcon icon={faTwitter} /></a>
+                <a href="https://twitch.tv/suzamax" class="fl w-25 w-10-ns tc pa3 bg-black-50"><FontAwesomeIcon icon={faTwitch} /></a>
+                <a href="https://github.com/Suzamax" class="fl w-25 w-10-ns tc pa3 bg-black-60"><FontAwesomeIcon icon={faGithub} /></a>
+                <a href="https://linkedin.com/in/suzamax" class="fl w-25 w-10-ns tc pa3 bg-black-70"><FontAwesomeIcon icon={faLinkedin} /></a>
+                <a href="https://instagram.com/cct.suzamax" class="fl w-25 w-10-ns tc pa3 bg-black-80"><FontAwesomeIcon icon={faInstagram} /></a>
+                <a href="https://t.me/suzamax" class="fl w-25 w-10-ns tc pa3 bg-black-90"><FontAwesomeIcon icon={faTelegram} /></a>
+                <a href="#" class="fl w-50 w-10-ns tc pa3 bg-light-blue black">Curriculum</a>
+            </nav>
+            <section>
+                <h1 class="f-headline lh-solid nicktitle" ref={nickRef}>Welcome!</h1>
+                <div id="siamese" ref={siameseRef}>
+                <div class="bubble bubble-bottom-left">Meow, scroll down!</div>
+                </div>
+            </section>
+        </header>
+    )
 }
