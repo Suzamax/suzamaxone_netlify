@@ -1,7 +1,7 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { ServerStyleSheet } from 'styled-components'
+import Document, { Html, Head, Main, NextScript } from 'next/document';
+import { ServerStyleSheet } from 'styled-components';
 
-import { GA_TRACKING_ID } from '../lib/gtag'
+import { GA_TRACKING_ID } from '../lib/gtag';
 
 export default class MyDocument extends Document {
   static getInitialProps({ renderPage }) {
@@ -52,7 +52,7 @@ export default class MyDocument extends Document {
             opacity: 1;
             transition: opacity 0.2s linear;
           }
-          
+
           .textchange.fadeOut {
             opacity: 0 !important;
           }
@@ -64,6 +64,6 @@ export default class MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
-    )
-  }
+    );
+  };
 }

@@ -1,8 +1,8 @@
-import 'regenerator-runtime/runtime'
-import React from 'react'
-import Layout from '../components/MainLayout'
-import matter from 'gray-matter'
-import ReactMarkdown from 'react-markdown'
+import 'regenerator-runtime/runtime';
+import React from 'react';
+import Layout from '../components/MainLayout';
+import matter from 'gray-matter';
+import ReactMarkdown from 'react-markdown';
 
 export default function Info({ frontmatter, markdownBody }) {
   return (
@@ -21,20 +21,20 @@ export default function Info({ frontmatter, markdownBody }) {
 
           </section>
         </article>
-      </Layout>      
+      </Layout>
   )
 }
 
 export async function getStaticProps() {
-  const content = await import(`../data/info.md`)
-  const config = await import(`../data/config.json`)
-  const data = matter(content.default)
+    const content = await import(`../data/info.md`);
+    const config = await import(`../data/config.json`);
+    const data = matter(content.default);
 
-  return {
-    props: {
-      title: config.title,
-      frontmatter: data.data,
-      markdownBody: data.content,
-    },
-  }
+    return {
+        props: {
+            title: config.title,
+            frontmatter: data.data,
+            markdownBody: data.content,
+        },
+    };
 }
