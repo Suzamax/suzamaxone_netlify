@@ -20,7 +20,7 @@
     "colorthief": "^2.3.2",
     "entypo-optimized": "https://github.com/adamwathan/entypo-optimized",
     "gray-matter": "^4.0.2",
-    "next": "^9.5.5",
+    "next": "^11.1.0",
     "next-routes": "^1.4.2",
     "nextjs-sitemap-generator": "^1.1.0",
     "node-sass": "^4.14.1",
